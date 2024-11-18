@@ -24,3 +24,7 @@ if(WIN32)
         LINK_FLAGS_MINSIZEREL "/SUBSYSTEM:windows /ENTRY:mainCRTStartup"
     )
 endif(WIN32)
+if(UNIX)
+    target_link_libraries(gpxSpeedEditor PRIVATE
+    dl)
+endif(UNIX)
