@@ -7,8 +7,8 @@ set(CMAKE_CXX_EXTENSIONS Off)
 project(gpxSpeedEditor VERSION 1.0)
 
 find_package(OpenGL REQUIRED)
-find_package(glfw3 3.4 REQUIRED)
-find_package(pugixml REQUIRED)
+find_package(glfw3 3 REQUIRED)
+find_package(pugixml 1.11 REQUIRED)
 
 add_subdirectory(libs)
 add_subdirectory(src)
