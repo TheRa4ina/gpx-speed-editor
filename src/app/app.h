@@ -2,7 +2,7 @@
 #include "toolkit.h"
 #include "gpxadapter.h"
 #include "gpxspeedmodifier.h"
-#include "imgui\extensions\filebrowser\imfilebrowser.h"
+#include "imgui/extensions/filebrowser/imfilebrowser.h"
 #include <vector>
 
 
