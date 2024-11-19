@@ -14,7 +14,7 @@ void GpxSpeedModifier::loadPoints(std::vector<GpxPoint> points)
     m_error_info.clear();
     calcPlotPoints();
     collectStatistic();
-    ImPlot::SetNextAxesToFit();
+    ImPlot::SetNextAxisToFit(ImAxis_X1);
 }
 
 void GpxSpeedModifier::collectStatistic()
