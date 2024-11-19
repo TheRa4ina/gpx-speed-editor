@@ -133,13 +133,11 @@ void GpxSpeedModifier::handlePointManipulation()
     for (auto i = 0; i < m_velocities_km_per_h.size(); i++) {
         if (ImPlot::DragPoint(i, &m_time_vec[i], &m_velocities_km_per_h[i], ImVec4(0, 1, 0.96f, 1), 1.5f)) {
             m_velocities_km_per_h[i] = std::max(0.5, m_velocities_km_per_h[i]);
+            plot_changed=true;
         }
-        if (was_lmb_down and !io.MouseDown[0]) {
-            was_lmb_down = false;
+        if (plot_changed and !io.MouseDown[0]) {
+            plot_changed = false;
             updatePlot();
-        }
-        if (io.MouseDown[0]) {
-            was_lmb_down = true;
         }
     }
 }

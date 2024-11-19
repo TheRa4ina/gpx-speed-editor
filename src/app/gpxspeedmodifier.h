@@ -33,7 +33,7 @@ private:
 	// If empty shows graph, otherwise error info
 	std::string m_error_info = "gpx file not loaded";
 
-	bool was_lmb_down = false;
+	bool plot_changed = false;
 	ImPlotPoint last_mouse_pos{ -1.0, -1.0 };
 
 	// updates plot points
