@@ -52,7 +52,7 @@ namespace gpxTk
         size_t pos = timeStr.find('.');
         if (pos != std::string::npos)
         {
-            std::string milliseconds_str = timeStr.substr(pos + 1, 4); // Get 4 digits for milliseconds
+            std::string milliseconds_str = timeStr.substr(pos + 1, 3); // Get 3 digits for milliseconds
             int milliseconds = std::stoi(milliseconds_str);
 
             tp = std::chrono::system_clock::from_time_t(timegm(&tm)) + std::chrono::milliseconds(milliseconds);
@@ -82,7 +82,7 @@ namespace gpxTk
         // Create string stream to format the date and time
         std::ostringstream oss;
         oss << std::put_time(&tm, "%Y-%m-%dT%H:%M:%S")                    // Standard ISO format without milliseconds
-            << '.' << std::setw(4) << std::setfill('0') << millis.count() // Add milliseconds
+            << '.' << std::setw(3) << std::setfill('0') << millis.count() // Add milliseconds
             << 'Z';                                                       // Append 'Z' for UTC
 
         return oss.str();
