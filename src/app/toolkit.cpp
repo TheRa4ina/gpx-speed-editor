@@ -55,13 +55,12 @@ namespace gpxTk
             std::string milliseconds_str = timeStr.substr(pos + 1, 4); // Get 4 digits for milliseconds
             int milliseconds = std::stoi(milliseconds_str);
 
-            tp = std::chrono::system_clock::from_time_t(std::mktime(&tm)) + std::chrono::milliseconds(milliseconds);
+            tp = std::chrono::system_clock::from_time_t(timegm(&tm)) + std::chrono::milliseconds(milliseconds);
         }
         else
         {
             // No milliseconds part, just use the regular time
-            time_t t = std::mktime(&tm);
-            tp = std::chrono::system_clock::from_time_t(t);
+            tp = std::chrono::system_clock::from_time_t(timegm(&tm));
         }
 
         return tp;
